@@ -1,0 +1,66 @@
+<!-- Start Blog Details Area -->
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <div class="widget widget_author">
+                        <h3 class="widget-title">About Author</h3>
+
+                        <div class="author-box">
+                            <a href="blog-right-sidebar.html"><img src="assets/images/author.jpg" alt="image"></a>
+
+                            <h3>
+                                <a href="blog-right-sidebar.html">Lily Watson</a>
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet consetetur sadipscing elitr sed diam nonumy eirmod.</p>
+
+                            <ul class="author-social-links">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="flaticon-facebook"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="flaticon-twitter"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.instagram.com/" target="_blank">
+                                        <i class="flaticon-instagram"></i>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="https://www.linkedin.com/" target="_blank">
+                                        <i class="flaticon-linkedin"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div class="article-content">
+                        <h3>{{publication.titre}}</h3>
+
+                        <ul class="entry-meta">
+                            <li><i class="ri-calendar-line"></i> {{publication.date | date:'mediumDate'}}</li>
+                            <li><i class="ri-time-line"></i> 5 Minute Read</li>
+                        </ul>
+
+                        <p>{{publication.texte}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Blog Details Area -->

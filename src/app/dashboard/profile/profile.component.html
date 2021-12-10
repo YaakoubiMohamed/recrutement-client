@@ -1,0 +1,75 @@
+<!-- Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <h1>My Profile</h1>
+    <ol class="breadcrumb">
+        <li class="item"><a href="candidates-dashboard.html">Home</a></li>
+        <li class="item"><a href="candidates-dashboard.html">Dashboard</a></li>
+        <li class="item">My Profile</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+
+<!-- Start My Profile Area -->
+<div class="my-profile-box">
+    <h3>Profile Details</h3>
+
+    <form #profileForm>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group profile-box">
+                    <img [src]="user.photo" alt="image">
+                    <div class="file-upload">
+                        <input type="file" (change)="upload(f,img)" name="file" id="file" class="inputfile" #f />
+                        <label for="file"><i class="ri-upload-2-line"></i> Upload Photo</label>
+                        <input type="hidden" name="photo" [(ngModel)]="user.photo" #img>
+                    </div>
+
+                    <div class="text">
+                        <p>Max file size is 1MB, Minimum dimension: 450x450 And Suitable files are .jpg & .png</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" name="nom" [(ngModel)]="user.nom" class="form-control" placeholder="Andy Smith">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Prenom</label>
+                    <input type="text" name="prenom" [(ngModel)]="user.prenom" class="form-control" placeholder="UI Designer">
+                </div>
+            </div>
+            
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" [(ngModel)]="user.email" class="form-control" placeholder="hello@andysmith.com">
+                </div>
+            </div>
+            
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Telephone</label>
+                    <input type="text" name="telephone" [(ngModel)]="user.telephone" class="form-control" placeholder="+88 (123) 123456">
+                    <input type="hidden" name="uid" [(ngModel)]="user.uid">
+                </div>
+            </div>                       
+
+            <div class="col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Complete Address</label>
+                    <textarea name="adresse" [(ngModel)]="user.adresse" class="form-control" placeholder=""></textarea>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <button type="button" (click)="update(user)" class="default-btn">Save Change <i class="flaticon-send"></i></button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- End My Profile Area -->

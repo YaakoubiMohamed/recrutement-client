@@ -1,0 +1,144 @@
+
+
+<!-- Start Profile Authentication Area -->
+<div class="profile-authentication-area ptb-100">
+    <div class="container">
+        <div class="profile-authentication-tabs">
+            <div class="authentication-tabs-list">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login">Connexion</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register">Inscription</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="reset-password-tab" data-bs-toggle="tab" href="#reset-password" role="tab" aria-controls="reset-password">Motdepasse oublié?</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel">
+                    <div class="eeza-authentication-form">
+                        <form [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <input type="email" formControlName="email" class="form-control" placeholder="Username" 
+                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email obligatoire</div>
+                                    <div *ngIf="f.email.errors.email">Email incorrecte</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" formControlName="password" class="form-control" placeholder="Password" 
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Mot de passe obligatoire</div>
+                                    <div *ngIf="f.password.errors.minlength">
+                                      Password must be at least 6 characters
+                                    </div>
+                                    <div *ngIf="f.password.errors.maxlength">
+                                      Username must not exceed 20 characters
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="default-btn">Connexion<i class="flaticon-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="register" role="tabpanel">
+                    <div class="eeza-authentication-form">
+                        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                            <div class="form-group">
+                                <input type="text" formControlName="nom" class="form-control" placeholder="Tapez Votre nom"
+                                [ngClass]="{ 'is-invalid': submitted && re.nom.errors }">
+                                <div *ngIf="submitted && re.nom.errors" class="invalid-feedback">
+                                    <div *ngIf="re.nom.errors.required">Entre votre nom</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" formControlName="prenom" class="form-control" placeholder="Tapez Votre prenom"
+                                [ngClass]="{ 'is-invalid': submitted && re.prenom.errors }">
+                                <div *ngIf="submitted && re.prenom.errors" class="invalid-feedback">
+                                    <div *ngIf="re.prenom.errors.required">Entre votre prenom</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" formControlName="email" class="form-control" placeholder="Tapez Votre email"
+                                [ngClass]="{ 'is-invalid': submitted && re.email.errors }">
+                                <div *ngIf="submitted && re.email.errors" class="invalid-feedback">
+                                    <div *ngIf="re.email.errors.required">Email obligatoire</div>
+                                    <div *ngIf="re.email.errors.email">Email incorrect</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" formControlName="password" class="form-control" placeholder="Password"
+                                [ngClass]="{ 'is-invalid': submitted && re.password.errors }">
+                                <div *ngIf="submitted && re.password.errors" class="invalid-feedback">
+                                    <div *ngIf="re.password.errors.required">Mot de passe requis</div>
+                                    <div *ngIf="re.password.errors.minlength">
+                                        Le mot de passe doit être au moins de 6 caractères
+                                    </div>
+                                    <div *ngIf="re.password.errors.maxlength">
+                                        le mot de passe ne doit pas dépasser 20 caractères
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" formControlName="telephone" class="form-control" placeholder="Tapez Votre telephone"
+                                [ngClass]="{ 'is-invalid': submitted && re.telephone.errors }">
+                                <div *ngIf="submitted && re.telephone.errors" class="invalid-feedback">
+                                    <div *ngIf="re.telephone.errors.required">Entre votre telephone</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <textarea formControlName="adresse" id="" class="form-control"></textarea>
+                            </div>
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && re.acceptTerms.errors }" />
+                                <label for="acceptTerms" class="form-check-label">Accepter les termes et conditions</label>
+                                <div *ngIf="submitted && re.acceptTerms.errors" class="invalid-feedback">Accepter les conditions générales est requis</div>
+                            </div>
+
+                            <button type="submit" class="default-btn">Register <i class="flaticon-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="reset-password" role="tabpanel">
+                    <div class="eeza-authentication-form">
+                        <form [formGroup]="resetForm" (ngSubmit)="reset()">
+                            <div class="form-group">
+                                <input type="text" formControlName="email" class="form-control" placeholder="email" 
+                                [ngClass]="{ 'is-invalid': submitted && rs.email.errors }">
+                                <div *ngIf="submitted && rs.email.errors" class="invalid-feedback">
+                                    <div *ngIf="rs.email.errors.required">Email is required</div>
+                                    <div *ngIf="rs.email.errors.email">Email is invalid</div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="default-btn">Valider <i class="flaticon-send"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Profile Authentication Area -->

@@ -1,0 +1,111 @@
+<!-- Start Topbar Area -->
+<div class="topbar-area">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+                <ul class="topbar-social-list">
+                    <li>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="flaticon-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/" target="_blank"><i class="flaticon-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/" target="_blank"><i class="flaticon-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/" target="_blank"><i class="flaticon-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-7 col-md-6">
+                <ul class="topbar-action">
+                    <li *ngIf="!isLoggedIn">
+                        <a href="login"><i class="flaticon-padlock"></i> Connexion</a>
+                    </li>
+
+                    <li *ngIf="!isLoggedIn">
+                        <a href="login"><i class="flaticon-user"></i> inscription</a>
+                    </li>
+                    <li *ngIf="isLoggedIn">
+                        <a href="dashboard"><i class="flaticon-user"></i> {{user.nom}} {{user.prenom}}</a>
+                    </li>
+                    <li *ngIf="isLoggedIn">
+                        <a (click)="authService.SignOut()"><i class="flaticon-user"></i> déconnexion</a>
+                    </li>
+
+                    <li class="dropdown language-option">
+                        <button class="dropdown-toggle" type="button" id="language1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="flaticon-worldwide"></i>
+                            <span class="lang-name"></span>
+                        </button>
+                        <div class="dropdown-menu language-dropdown-menu" aria-labelledby="language1">
+                            <a class="dropdown-item" href="#">
+                                <img src="assets/images/uk.png" alt="flag">
+                                English
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <img src="assets/images/china.png" alt="flag">
+                                简体中文
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <img src="assets/images/uae.png" alt="flag">
+                                العربيّة
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Topbar Area -->
+
+<!-- Start Navbar Area -->
+<div class="navbar-area">
+    <div class="main-responsive-nav">
+        <div class="container">
+            <div class="main-responsive-menu">
+                <div class="logo">
+                    <a href="/home">
+                        <h3>TunisiaTech</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-navbar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="/home">
+                    <h3>TunisiaTech</h3>
+                </a>
+
+                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a href="/home" class="nav-link active">
+                                Accueil 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about" class="nav-link">À propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="offres" class="nav-link">Offres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="publication" class="nav-link">Actualites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Navbar Area -->

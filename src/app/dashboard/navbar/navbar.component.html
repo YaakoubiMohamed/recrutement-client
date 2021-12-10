@@ -1,0 +1,61 @@
+<div class="navbar-area">
+    <div class="main-responsive-nav">
+        <div class="main-responsive-menu">
+            <div class="responsive-burger-menu d-lg-none d-block">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-navbar">
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="/dashboard" class="nav-link">
+                            Accueil 
+                        </a>
+                    </li>
+
+                    
+                </ul>
+
+                <div class="others-options d-flex align-items-center">
+                    <div class="option-item">
+                        <div class="dropdown profile-nav-item">
+                            <a href="#" class="dropdown-bs-toggle" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="menu-profile">
+                                    <img src="{{user.photo}}" class="rounded-circle" alt="image">
+                                    <span class="name">Mon Profile</span>
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu">
+                                <div class="dropdown-header d-flex flex-column align-items-center">
+                                    <div class="figure mb-3">
+                                        <img src="{{user.photo}}" class="rounded-circle" alt="image">
+                                    </div>
+
+                                    <div class="info text-center">
+                                        <span class="name">{{user.nom}} {{user.prenom}}</span>
+                                        <p class="mb-3 email">{{user.email}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown-footer">
+                                    <ul class="profile-nav">
+                                        <li class="nav-item">
+                                            <a  (click)="authService.SignOut()"  class="nav-link"><i class="ri-logout-box-r-line"></i> <span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

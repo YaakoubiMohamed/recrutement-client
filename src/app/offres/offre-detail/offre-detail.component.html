@@ -1,0 +1,122 @@
+<!-- Start Page Banner Area -->
+<div class="page-banner-area item-bg-three">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>{{offre.titre}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
+
+<!-- Start Job Details Area -->
+<div class="job-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="job-details-desc">
+                    <h2>{{offre.titre}}</h2>
+                    <p>{{offre.description}}</p>
+
+                    
+
+                    <div class="row job-article-footer">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="article-tags">
+                                <span>Required Skill:</span>
+                                <a href="index.html">IT</a>
+                                <a href="index.html">Engineer</a>
+                                <a href="index.html">Software</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div *ngIf="etat == 'accepter'">
+                    <button (click)="show(offre)" class="default-btn">Afficher Quiz</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="job-details-sticky">
+                    <div class="job-details-information">
+                        <div class="information-box">
+                            <div class="company-logo">
+                                <img src="assets/images/job/job-1.png" alt="image">
+                            </div>
+                            
+                            <h3>{{offre.titre}}</h3>
+                            <span>Graduate Programme – IT Software Test Analyst Engineer</span>
+                        </div>
+
+                        <ul class="information-list-box">
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-calendar"></i> Date Posted</span>
+                                    28th June
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-reload"></i> Expiration Date</span>
+                                    30th September
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-location"></i> Location</span>
+                                    Remote
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-volume"></i> Career Level</span>
+                                    Director
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-layers"></i> Experience</span>
+                                    5+ Years
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-briefcase"></i> Qualification</span>
+                                    Master Degree
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-money"></i> Rate</span>
+                                    $40 - $60 / Hr
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><i class="flaticon-resume"></i> Job Applicants</span>
+                                    30 Applicants
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="job-details-btn-box">
+                            <a href="#" class="default-btn">Apply For Job <i class="flaticon-list-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Job Details Area -->

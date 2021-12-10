@@ -1,0 +1,141 @@
+<!-- Breadcrumb Area -->
+<div class="breadcrumb-area">
+    <h1>Mon CV</h1>
+    <ol class="breadcrumb">
+        <li class="item"><a href="/home">Home</a></li>
+        <li class="item"><a href="/dashboard">Dashboard</a></li>
+        <li class="item">Mon CV</li>
+    </ol>
+</div>
+<!-- End Breadcrumb Area -->
+
+<!-- Start Submit Resumes Area -->
+<div class="submit-resumes-box">
+    <div class="row">
+
+        <h3>Education</h3>
+        <div *ngFor="let education of educations">
+            {{ education.type}} <br>
+            {{ education.titre}} <br>
+        </div>
+        <form [formGroup]="edForm" class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Titre</label>
+                    <input type="text" formControlName="titre" class="form-control" placeholder="Title">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>niveau</label>
+                    <input type="text" formControlName="niveau" class="form-control" placeholder="Degree">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Institut</label>
+                    <input type="text" formControlName="institut" class="form-control" placeholder="Institute">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Année</label>
+                    <input type="text" formControlName="annee" class="form-control" placeholder="Year">
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12">
+                <button type="button" (click)="addEducation()" class="default-btn">Ajouter<i class="flaticon-send"></i></button>
+            </div>
+        </form>
+
+        <h3>Experience</h3>
+        <div *ngFor="let experience of experiences">
+            {{ experience.type}} <br>
+            {{ experience.titre}} <br>
+        </div>
+        <form [formGroup]="experienceForm" class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Titre</label>
+                    <input type="text" formControlName="titre" class="form-control" placeholder="Title Here">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Societe</label>
+                    <input type="text" class="form-control" formControlName="experience" placeholder="Experience">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Annee</label>
+                    <input type="date" class="form-control" formControlName="annee" placeholder="Experience">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <button type="submit" (click)="addExperience()" class="default-btn">Ajouter<i class="flaticon-send"></i></button>
+            </div>
+        </form>
+
+        <h3>Compétence</h3>
+        <div *ngFor="let competence of competences">
+            {{ competence.titre}} <br>
+            {{ competence.niveau}} <br>
+        </div>
+        <form [formGroup]="competanceForm" class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Titre</label>
+                    <input type="text" formControlName="titre" class="form-control" placeholder="Title Here">
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>niveau</label>
+                    <select class="form-control" formControlName="niveau">
+                        <option value="debutant">débutant</option>
+                        <option value="intermediaire">intermédiaire</option>
+                        <option value="avance">avancé</option>
+                        <option value="expert">expert</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <button type="submit" (click)="addCompetance()" class="default-btn">Ajouter<i class="flaticon-send"></i></button>
+            </div>
+        </form>
+        <h3>Liens sociaux</h3>
+        <div *ngFor="let social of socials">
+            {{ social.linkedin}} <br>
+            {{ social.github}} <br>
+        </div>
+        <form [formGroup]="socialForm" class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Github</label>
+                    <input type="text" class="form-control" formControlName="github" placeholder="https://www.facebook.com/">
+                </div>
+            </div>
+            
+            <div class="col-xl-6 col-lg-12 col-md-12">
+                <div class="form-group">
+                    <label>Linkedin</label>
+                    <input type="text" class="form-control"  formControlName="linkedin" placeholder="https://www.linkedin.com/">
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <button type="submit" (click)="addSocial()" class="default-btn">Ajouter <i class="flaticon-send"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Start Submit Resumes Area -->

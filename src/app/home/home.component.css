@@ -1,0 +1,8 @@
+.home{
+    background-image: url(../../assets/images/bg1.jpg) !important;
+    /*background-position: center top;*/
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 800px;
+}

@@ -1,0 +1,42 @@
+<countdown #cd [config]="{leftTime: 900}" class="timer"></countdown>
+
+<div *ngFor="let question of questions; let i = index">
+    <div class="badge badge-info">Question {{i + 1}}</div>
+    <!--<div *ngIf="config.duration" class="badge badge-info float-right">Time: {{ellapsedTime}} / {{duration}}</div>-->
+    <h3 class="font-weight-normal">{{i + 1}}.
+      <span [innerHTML]="question.titre"></span>
+    </h3>
+    <div class="row text-left options">
+      <div class="col-6">
+        <div class="option">
+          <label class="font-weight-normal" >
+            <input  type="radio" [value]="question.ch1" (change) ="handleChange(question.ch1,i)" name="question" /> {{question.ch1}} 
+          </label> <br>
+          <label class="font-weight-normal" >
+            <input  type="radio" [value]="question.ch2" (change) ="handleChange(question.ch2,i)" name="question" /> {{question.ch2}} 
+          </label><br>
+          <label class="font-weight-normal" >
+            <input  type="radio" [value]="question.ch3" (change) ="handleChange(question.ch3,i)" name="question" /> {{question.ch3}} 
+          </label><br>
+          <label class="font-weight-normal" >
+            <input  type="radio" [value]="question.ch4" (change) ="handleChange(question.ch4,i)" name="question" /> {{question.ch4}} 
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <button class="btn btn-primary" (click)="valider()">Valider</button>
+  <div *ngIf="isAnswered" class="card">
+      <h1>votre score est {{score}}/{{questions.length}} <span *ngIf="(score/questions.length)>= 0.5">felicitation</span>
+      <span *ngIf="(score/questions.length) < 0.5">desole essayer une autre fois</span></h1>
+  </div>
+  <!--
+  <div class="text-center">
+    <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(0);">Debut</button>
+    <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.index - 1);">Precedent</button>
+    <button class="btn btn-primary" (click)="goTo(pager.index + 1);">Suivant</button>
+    <button class="btn btn-default" *ngIf="config.allowBack" (click)="goTo(pager.count - 1);">Fin</button>
+    
+  </div>-->
+  <!--<pagination *ngIf="config.showPager" direction-links="false" total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination>-->

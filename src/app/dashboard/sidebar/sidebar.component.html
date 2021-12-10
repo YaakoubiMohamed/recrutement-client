@@ -1,0 +1,73 @@
+<div class="sidemenu-area">
+    <div class="sidemenu-header">
+        <a href="/home" class="navbar-brand d-flex align-items-center">
+            <h3>TunisiaTech</h3>
+        </a>
+
+        <div class="responsive-burger-menu d-block d-lg-none">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </div>
+    </div>
+
+    <div class="sidemenu-body">
+        <ul class="sidemenu-nav metisMenu h-100" id="sidemenu-nav" data-simplebar>
+            <li class="nav-item active">
+                <a href="/dashboard" class="nav-link">
+                    <span class="icon"><i class="ri-home-line"></i></span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="dashboard/profile" class="nav-link">
+                    <span class="icon"><i class="ri-user-line"></i></span>
+                    <span class="menu-title">Profil</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="dashboard/cv" class="nav-link">
+                    <span class="icon"><i class="ri-file-list-line"></i></span>
+                    <span class="menu-title">Mon CV</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="dashboard/condidature" class="nav-link">
+                    <span class="icon"><i class="ri-briefcase-line"></i></span>
+                    <span class="menu-title">Candidatures</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="dashboard/message" class="nav-link">
+                    <span class="icon"><i class="ri-chat-1-line"></i></span>
+                    <span class="menu-title">Messages</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="dashboard/change-password" class="nav-link">
+                    <span class="icon"><i class="ri-lock-line"></i></span>
+                    <span class="menu-title">Modifier Mot de passe</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a  (click)="authService.SignOut()" class="nav-link">
+                    <span class="icon"><i class="ri-logout-circle-r-line"></i></span>
+                    <span class="menu-title">Deconnexion</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a (click)="delete()" class="nav-link">
+                    <span class="icon"><i class="ri-delete-bin-line"></i></span>
+                    <span class="menu-title">Supprimer Profile</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
